@@ -1,0 +1,39 @@
+DROP TABLE IF EXISTS USER;
+DROP TABLE IF EXISTS CATEGORIES;
+DROP TABLE IF EXISTS BOOKS;
+DROP TABLE IF EXISTS RESERVATIONS;
+CREATE TABLE USER (
+    username VARCHAR(20) PRIMARY KEY,
+    password VARCHAR(6),
+    email VARCHAR(20),
+    phone VARCHAR(10) UNIQUE,
+    FirstName VARCHAR(10),
+    LastName VARCHAR(10),
+    House VARCHAR(20),
+    Town VARCHAR(20),
+    County VARCHAR(20)
+);
+CREATE TABLE BOOKS (
+    ISBN VARCHAR(10) PRIMARY KEY,
+    BookTitle VARCHAR(20),
+    Author VARCHAR(20),
+    Edition INT,
+    YearReleased INT,
+    CategoryID VARCHAR(3),
+    Reserved VARCHAR(3),
+    FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+);
+CREATE TABLE Categories (
+    CategoryID VARCHAR(3) PRIMARY KEY,
+    CategoryDescription VARCHAR(15)
+);
+CREATE TABLE RESERVATIONS (
+    ISBN VARCHAR(10),
+    Username VARCHAR(20),
+    ReservedDate DATE,
+    PRIMARY KEY (ISBN, Username),
+    FOREIGN KEY (ISBN) REFERENCES BOOKS(ISBN),
+    FOREIGN KEY (Username) REFERENCES USER(username)
+);
+
+
