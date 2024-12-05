@@ -35,5 +35,62 @@ CREATE TABLE RESERVATIONS (
     FOREIGN KEY (ISBN) REFERENCES BOOKS(ISBN),
     FOREIGN KEY (Username) REFERENCES USER(username)
 );
+INSERT INTO Categories (CategoryID, CategoryDescription) VALUES
+('001', 'Fiction'),
+('002', 'Non-fiction'),
+('003', 'Science'),
+('004', 'History'),
+('005', 'Biography'),
+('006', 'Mystery'),
+('007', 'Romance'),
+('008', 'Fantasy');
 
+INSERT INTO BOOKS (ISBN, BookTitle, Author, Edition, YearReleased, CategoryID, Reserved) VALUES
+('9781234567', 'Czech Legends', 'Karel Novák', 1, 2005, '001', 'No'),
+('9782345678', 'History of Prague', 'Petr Svoboda', 2, 2010, '004', 'No'),
+('9783456789', 'The Mystery of the Prague Castle', 'Eva Horáková', 1, 2015, '006', 'No'),
+('9784567890', 'The Czech Republic in the 20th Century', 'Jan Procházka', 3, 1988, '004', 'No'),
+('9785678901', 'Great Czech Writers', 'Milan Kundera', 1, 1999, '005', 'No'),
+('9786789012', 'Romantic Tales of Bohemia', 'Zuzana Černá', 1, 2018, '007', 'No'),
+('9787890123', 'Czech Fantasy Adventures', 'Jiří Karel', 1, 2020, '008', 'No'),
+('9788901234', 'Czech Folklore', 'Ludmila Králová', 1, 2012, '002', 'No'),
+('9789012345', 'Czech Detective Stories', 'Marek Dvořák', 4, 2000, '006', 'No'),
+('9780123456', 'Czech Scientific Achievements', 'Václav Havlíček', 1, 2016, '003', 'No');
+INSERT INTO BOOKS (ISBN, BookTitle, Author, Edition, YearReleased, CategoryID, Reserved) VALUES
+('9781122334', 'The Bohemian Kingdoms', 'Alena Sokolová', 1, 2008, '004', 'No'),
+('9782233445', 'Czech Cooking Secrets', 'Jana Malá', 2, 2015, '002', 'No'),
+('9783344556', 'Echoes of Prague', 'Tomas Holeček', 1, 2019, '001', 'No'),
+('9784455667', 'Tales from Moravia', 'Zdenka Novotná', 1, 2020, '007', 'No'),
+('9785566778', 'The Battle of White Mountain', 'Martin Vondra', 3, 2012, '004', 'No'),
+('9786677889', 'The Prague Underground', 'Jaroslav Černý', 1, 2017, '006', 'No'),
+('9787788990', 'Bohemian Fairy Tales', 'Lukáš Kříž', 2, 2005, '008', 'No'),
+('9788899001', 'Prague: A City of Mysteries', 'Veronika Mlynářová', 1, 2014, '006', 'No'),
+('9789900112', 'Czech Women in History', 'Kristýna Králová', 4, 2011, '005', 'No'),
+('9781011122', 'Czech Avant-Garde Art', 'Václav Čermák', 1, 2002, '003', 'No');
+INSERT INTO BOOKS (ISBN, BookTitle, Author, Edition, YearReleased, CategoryID, Reserved) VALUES
+('9783112134', 'Moravian Myths', 'Jana Pavlíčková', 1, 2013, '007', 'No'), -- Romance
+('9783223245', 'Czech Classical Music', 'Ondřej Novotný', 2, 2011, '002', 'No'), -- Non-fiction
+('9783334356', 'The Velvet Curtain', 'Ivana Růžičková', 1, 2009, '004', 'No'), -- History
+('9783445467', 'Bohemian Architecture', 'Adam Slanina', 3, 2015, '002', 'No'), -- Non-fiction
+('9783556578', 'Czech Revolutionaries', 'Petr Kolář', 1, 1998, '004', 'No'), -- History
+('9783667689', 'Tales of Old Moravia', 'Helena Tomášová', 1, 2006, '007', 'No'), -- Romance
+('9783778790', 'Czech Superstitions', 'Vladimír Horáček', 1, 2014, '002', 'No'), -- Non-fiction
+('9783889901', 'Hidden Prague: A Guide', 'Michaela Škoda', 2, 2018, '006', 'No'), -- Mystery
+('9783991012', 'Czech Literary Treasures', 'Kateřina Jelínková', 4, 2003, '005', 'No'), -- Biography
+('9784002123', 'Prague: City of Gold', 'Tomáš Holoubek', 1, 2021, '001', 'No'), -- Fiction
+('9784113234', 'The Hussite Revolution', 'Anna Černochová', 3, 1997, '004', 'No'), -- History
+('9784224345', 'Czech Legends Retold', 'Daniela Pokorná', 2, 2019, '008', 'No'), -- Fantasy
+('9784335456', 'Bohemian Lifestyle', 'Filip Dohnal', 1, 2007, '002', 'No'), -- Non-fiction
+('9784446567', 'The Spirit of Prague', 'Lucie Vaněčková', 1, 2016, '006', 'No'), -- Mystery
+('9784557678', 'Czech Political History', 'Martin Krejčí', 4, 2001, '004', 'No'), -- History
+('9784668789', 'Mysteries of Bohemian Forest', 'Karolína Jirásková', 2, 2020, '007', 'No'), -- Romance
+('9784779890', 'Czech Innovations', 'Věra Kučerová', 1, 2005, '003', 'No'), -- Science
+('9784881001', 'Prague: Past and Present', 'Jan Richter', 3, 2018, '006', 'No'), -- Mystery
+('9784992112', 'The Czech Awakening', 'Jitka Kováčová', 1, 2010, '004', 'No'), -- History
+('9785003215', 'War Heroes', 'Bimon Němec', 2, 2001, '007', 'No'),
+('9785003223', 'Czech War Heroes', 'Šimon Němec', 2, 2000, '005', 'No'); -- Biography
+
+
+
+UPDATE BOOKS SET Reserved = 'No';
 
